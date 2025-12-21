@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تنوع المفصليات - موقع تعليمي مزخرف</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&amp;family=Amiri:wght@400;700&amp;display=swap" rel="stylesheet">
+  <style>
+        body {
+            box-sizing: border-box;
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* الزخارف الإسلامية المتحركة */
+        .islamic-pattern {
+            background-image: 
+                repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px),
+                repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(255,255,255,.03) 35px, rgba(255,255,255,.03) 70px);
+            animation: patternMove 20s linear infinite;
+        }
+        
+        @keyframes patternMove {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 70px 70px, -70px 70px; }
+        }
+        
+        /* تأثيرات النجوم المتلألئة */
+        .stars {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stars::before,
+        .stars::after {
+            content: '✨';
+            position: absolute;
+            font-size: 30px;
+            animation: twinkle 3s ease-in-out infinite;
+            opacity: 0;
+        }
+        
+        .stars::before {
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+        
+        .stars::after {
+            bottom: 30%;
+            left: 15%;
+            animation-delay: 1.5s;
+        }
+        
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1.2) rotate(180deg); }
+        }
+        
+        /* بطاقات مزخرفة */
+        .fancy-card {
+            background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.85) 100%);
+            border-radius: 30px;
+            box-shadow: 
+                0 20px 60px rgba(0,0,0,0.3),
+                inset 0 1px 0 rgba(255,255,255,0.9),
+                0 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .fancy-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #f093fb, #f5576c, #ffd140, #36d1dc, #5b86e5, #f093fb);
+            border-radius: 30px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+        }
+        
+        .fancy-card:hover::before {
+            opacity: 1;
+        }
+        
+        .fancy-card:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 30px 90px rgba(0,0,0,0.4);
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* زخارف دائرية متحركة */
+        .decorative-circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        
+        .circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        .circle:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .circle:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+        
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-30px) rotate(90deg);
+            }
+            50% {
+                transform: translateY(-50px) rotate(180deg);
+            }
+            75% {
+                transform: translateY(-30px) rotate(270deg);
+            }
+        }
+        
+        /* عناوين مزخرفة */
+        .decorative-title {
+            font-family: 'Amiri', serif;
+            position: relative;
+            display: inline-block;
+            padding: 0 30px;
+        }
+        
+        .decorative-title::before,
+        .decorative-title::after {
+            content: '◆';
+            position: absolute;
+            font-size: 40px;
+            color: #ffd700;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .decorative-title::before {
+            left: -10px;
+        }
+        
+        .decorative-title::after {
+            right: -10px;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+        }
+        
+        /* أزرار فاخرة */
+        .luxury-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        
+        .luxury-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .luxury-button:hover::before {
+            left: 100%;
+        }
+        
+        .luxury-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+        
+        /* شريط التنقل الفاخر */
+        .nav-bar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #667eea, #764ba2, #f093fb) 1;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .nav-button {
+            position: relative;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .nav-button:hover {
+            transform: translateY(-2px);
+            border-color: currentColor;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* إطارات مزخرفة */
+        .ornate-border {
+            border: 4px solid;
+            border-image: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #667eea) 1;
+            border-radius: 20px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .ornate-border::before,
+        .ornate-border::after {
+            content: '◈';
+            position: absolute;
+            font-size: 30px;
+            color: #764ba2;
+        }
+        
+        .ornate-border::before {
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 0 15px;
+        }
+        
+        /* أيقونات حيوية */
+        .animated-icon {
+            display: inline-block;
+            font-size: 60px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-15px) rotate(-5deg);
+            }
+            75% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+        
+        /* خلفية متدرجة متحركة */
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #667eea 75%, #764ba2 100%);
+            background-size: 400% 400%;
+            animation: gradientMove 15s ease infinite;
+        }
+        
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* بطاقات الدروس المزينة */
+        .lesson-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 3px solid transparent;
+            position: relative;
+        }
+        
+        .lesson-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+        
+        .lesson-card:hover::after {
+            opacity: 1;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .lesson-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+            border-color: currentColor;
+        }
+        
+        /* تأثير الظل النصي */
+        .text-shadow-luxury {
+            text-shadow: 
+                2px 2px 4px rgba(0,0,0,0.1),
+                0 0 20px rgba(255,255,255,0.5),
+                0 0 30px rgba(118, 75, 162, 0.3);
+        }
+        
+        /* خطوط فاصلة مزخرفة */
+        .decorative-divider {
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #764ba2, #f093fb, #764ba2, transparent);
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .decorative-divider::before {
+            content: '◆';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 0 20px;
+            color: #764ba2;
+            font-size: 25px;
+        }
+        
+        /* صناديق معلومات مزخرفة */
+        .info-box {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,147,251,0.2) 100%);
+            border-right: 5px solid #f093fb;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* جدول فاخر */
+        .luxury-table {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+        
+        .luxury-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .luxury-table td {
+            padding: 18px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .luxury-table tr:hover {
+            background: linear-gradient(90deg, rgba(102,126,234,0.05) 0%, rgba(240,147,251,0.05) 100%);
+        }
+        
+        /* تأثيرات التلاشي */
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* شارات مزخرفة */
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            20%, 100% { left: 100%; }
+        }
+        
+        /* خلفية النجوم الساطعة */
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full">
+  <div id="app" class="h-full w-full overflow-auto"><!-- الزخارف الخلفية المتحركة -->
+   <div class="decorative-circles">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+   </div><!-- Header -->
+   <header class="gradient-bg islamic-pattern stars text-white py-16 shadow-2xl relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10">
+     <div class="text-center">
+      <h1 id="main-title" class="decorative-title text-6xl font-bold mb-4 text-shadow-luxury">🦋 تنوع المفصليات 🦋</h1>
+      <div class="decorative-divider"></div>
+      <p id="subtitle" class="text-2xl opacity-95 font-semibold">أحياء - أول ثانوي بنين</p>
+      <p id="school-year" class="text-xl opacity-85 mt-3">العام الدراسي 2025</p>
+     </div>
+    </div><!-- نجوم متلألئة -->
+    <div class="sparkle" style="top: 15%; left: 20%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 25%; right: 25%; animation-delay: 0.5s;"></div>
+    <div class="sparkle" style="top: 40%; left: 15%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="top: 60%; right: 30%; animation-delay: 1.5s;"></div>
+    <div class="sparkle" style="top: 70%; left: 40%; animation-delay: 2s;"></div>
+   </header><!-- Navigation -->
+   <nav class="nav-bar sticky top-0 z-50">
+    <div class="container mx-auto px-6">
+     <div class="flex justify-center gap-3 py-5 flex-wrap"><button onclick="showPage('home')" class="nav-button text-purple-600 hover:text-purple-700"> 🏠 الرئيسية </button> <button onclick="showPage('lesson1')" class="nav-button text-blue-600 hover:text-blue-700"> 📚 الدرس الأول </button> <button onclick="showPage('lesson2')" class="nav-button text-green-600 hover:text-green-700"> 📖 الدرس الثاني </button> <button onclick="showPage('lesson3')" class="nav-button text-orange-600 hover:text-orange-700"> 📝 الدرس الثالث </button> <button onclick="showPage('quiz')" class="nav-button text-red-600 hover:text-red-700"> 🎯 الاختبار </button> <button onclick="showPage('team')" class="nav-button text-indigo-600 hover:text-indigo-700"> 👥 الفريق </button>
+     </div>
+    </div>
+   </nav><!-- Main Content -->
+   <main class="container mx-auto px-6 py-16 relative"><!-- Home Page -->
+    <div id="home-page" class="page-content fade-in">
+     <div class="max-w-7xl mx-auto"><!-- مقدمة مزخرفة -->
+      <div class="fancy-card p-12 mb-12 stars">
+       <h2 id="intro-title" class="text-5xl font-bold text-center mb-8 bg-gradient-to-r from-purple-600 via-pink-600 to-red-600 bg-clip-text text-transparent"><span class="animated-icon">📖</span> مقدمة عن الدرس</h2>
+       <p id="intro-text" class="text-2xl text-gray-700 text-center leading-relaxed max-w-5xl mx-auto">في هذا الدرس سنتعرف على <strong class="text-purple-700">تنوع المفصليات</strong>، وهي أكبر وأنجح مجموعة من الحيوانات على وجه الأرض! سندرس الحشرات والقشريات والعنكبيات وعديدات الأرجل، ونتعرف على خصائصها الفريدة وأهميتها في حياتنا.</p>
+      </div><!-- بطاقات الدروس المزخرفة -->
+      <div class="grid md:grid-cols-3 gap-10 mb-12">
+       <div class="lesson-card border-blue-400" style="border-color: #3b82f6;">
+        <div class="bg-gradient-to-br from-blue-500 to-blue-700 p-10 text-center relative overflow-hidden">
+         <div class="animated-icon text-white mb-4">
+          🦋
+         </div>
+         <h3 class="text-4xl font-bold text-white text-shadow-luxury">الحشرات</h3>
+         <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
+         <div class="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full -ml-12 -mb-12"></div>
+        </div>
+        <div class="p-8">
+         <div class="ornate-border mb-6">
+          <ul class="space-y-3 text-gray-700">
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">أكثر من مليون نوع</span></li>
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">6 أرجل و3 أجزاء للجسم</span></li>
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">تلقيح النباتات</span></li>
+          </ul>
+         </div><button onclick="showPage('lesson1')" class="luxury-button w-full"> ابدأ الدرس الأول ← </button>
+        </div>
+       </div>
+       <div class="lesson-card border-green-400" style="border-color: #10b981;">
+        <div class="bg-gradient-to-br from-green-500 to-green-700 p-10 text-center relative overflow-hidden">
+         <div class="animated-icon text-white mb-4" style="animation-delay: 0.3s;">
+          🦀
+         </div>
+         <h3 class="text-4xl font-bold text-white text-shadow-luxury">القشريات</h3>
+         <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
+         <div class="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full -ml-12 -mb-12"></div>
+        </div>
+        <div class="p-8">
+         <div class="ornate-border mb-6">
+          <ul class="space-y-3 text-gray-700">
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">67,000 نوع معروف</span></li>
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">تعيش في الماء</span></li>
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">مصدر غذائي مهم</span></li>
+          </ul>
+         </div><button onclick="showPage('lesson2')" class="luxury-button w-full" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);"> ابدأ الدرس الثاني ← </button>
+        </div>
+       </div>
+       <div class="lesson-card border-orange-400" style="border-color: #f97316;">
+        <div class="bg-gradient-to-br from-orange-500 to-orange-700 p-10 text-center relative overflow-hidden">
+         <div class="animated-icon text-white mb-4" style="animation-delay: 0.6s;">
+          🕷️
+         </div>
+         <h3 class="text-4xl font-bold text-white text-shadow-luxury">العنكبيات</h3>
+         <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full -mr-16 -mt-16"></div>
+         <div class="absolute bottom-0 left-0 w-24 h-24 bg-white opacity-10 rounded-full -ml-12 -mb-12"></div>
+        </div>
+        <div class="p-8">
+         <div class="ornate-border mb-6">
+          <ul class="space-y-3 text-gray-700">
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">102,000 نوع</span></li>
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">8 أرجل وبدون قرون</span></li>
+           <li class="flex items-center gap-3"><span class="badge text-sm">✓</span> <span class="font-semibold">مكافحة الحشرات</span></li>
+          </ul>
+         </div><button onclick="showPage('lesson3')" class="luxury-button w-full" style="background: linear-gradient(135deg, #f97316 0%, #ea580c 100%); box-shadow: 0 10px 30px rgba(249, 115, 22, 0.4);"> ابدأ الدرس الثالث ← </button>
+        </div>
+       </div>
+      </div><!-- معلومات إضافية مزخرفة -->
+      <div class="grid md:grid-cols-2 gap-8">
+       <div class="info-box relative z-10">
+        <h3 class="text-3xl font-bold text-purple-900 mb-6 flex items-center gap-3"><span class="animated-icon text-4xl">🎯</span> أهداف الدرس</h3>
+        <ul class="space-y-3 text-gray-800 text-lg relative z-10">
+         <li class="flex items-start gap-3"><span class="text-purple-600 text-2xl">•</span> <span>التعرف على خصائص المفصليات المميزة</span></li>
+         <li class="flex items-start gap-3"><span class="text-purple-600 text-2xl">•</span> <span>دراسة التنوع الهائل في هذه الشعبة</span></li>
+         <li class="flex items-start gap-3"><span class="text-purple-600 text-2xl">•</span> <span>فهم الأهمية البيئية والاقتصادية</span></li>
+         <li class="flex items-start gap-3"><span class="text-purple-600 text-2xl">•</span> <span>المقارنة بين المجموعات المختلفة</span></li>
+        </ul>
+       </div>
+       <div class="info-box relative z-10" style="border-right-color: #fbbf24;">
+        <h3 class="text-3xl font-bold text-yellow-900 mb-6 flex items-center gap-3"><span class="animated-icon text-4xl" style="animation-delay: 0.5s;">📊</span> هل تعلم؟</h3>
+        <ul class="space-y-3 text-gray-800 text-lg relative z-10">
+         <li class="flex items-start gap-3"><span class="text-yellow-600 text-2xl">•</span> <span>المفصليات تشكل 75% من الحيوانات</span></li>
+         <li class="flex items-start gap-3"><span class="text-yellow-600 text-2xl">•</span> <span>توجد في جميع البيئات على الأرض</span></li>
+         <li class="flex items-start gap-3"><span class="text-yellow-600 text-2xl">•</span> <span>لها هيكل خارجي من الكايتين</span></li>
+         <li class="flex items-start gap-3"><span class="text-yellow-600 text-2xl">•</span> <span>تنسلخ للنمو والتطور</span></li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div><!-- Lesson 1 -->
+    <div id="lesson1-page" class="page-content hidden">
+     <div class="max-w-6xl mx-auto">
+      <div class="fancy-card p-12 fade-in stars">
+       <h2 class="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"><span class="animated-icon">🦋</span> الدرس الأول: الحشرات</h2>
+       <div class="decorative-divider"></div>
+       <div class="space-y-8 mt-10">
+        <section class="info-box" style="border-right-color: #3b82f6;">
+         <h3 class="text-3xl font-bold text-blue-900 mb-5 flex items-center gap-3"><span class="animated-icon text-4xl">✨</span> مقدمة عن الحشرات</h3>
+         <p class="text-xl text-gray-800 leading-relaxed relative z-10">الحشرات هي أكثر الحيوانات انتشاراً على سطح الأرض، وتشكل أكثر من <span class="badge">75%</span> من جميع الحيوانات المعروفة. تتميز الحشرات بجسمها المقسم إلى ثلاثة أجزاء رئيسية وستة أرجل.</p>
+        </section>
+        <section class="ornate-border">
+         <h3 class="text-3xl font-bold text-purple-900 mb-6 text-center flex items-center justify-center gap-3"><span class="animated-icon text-4xl">🔬</span> التركيب الخارجي للحشرات</h3>
+         <div class="grid md:grid-cols-3 gap-6 mt-6">
+          <div class="fancy-card p-6">
+           <h4 class="text-2xl font-bold text-purple-800 mb-4 flex items-center gap-2"><span class="badge">1️⃣</span> الرأس</h4>
+           <ul class="text-gray-700 space-y-2 text-lg">
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> زوج من قرون الاستشعار</li>
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> العيون المركبة</li>
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> أجزاء الفم</li>
+           </ul>
+          </div>
+          <div class="fancy-card p-6">
+           <h4 class="text-2xl font-bold text-purple-800 mb-4 flex items-center gap-2"><span class="badge">2️⃣</span> الصدر</h4>
+           <ul class="text-gray-700 space-y-2 text-lg">
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> ثلاثة أزواج من الأرجل</li>
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> زوجان من الأجنحة</li>
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> مقسم لثلاث حلقات</li>
+           </ul>
+          </div>
+          <div class="fancy-card p-6">
+           <h4 class="text-2xl font-bold text-purple-800 mb-4 flex items-center gap-2"><span class="badge">3️⃣</span> البطن</h4>
+           <ul class="text-gray-700 space-y-2 text-lg">
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> الأعضاء الداخلية</li>
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> ثقوب التنفس</li>
+            <li class="flex items-start gap-2"><span class="text-purple-500">◆</span> الأعضاء التناسلية</li>
+           </ul>
+          </div>
+         </div>
+        </section>
+        <section class="info-box" style="border-right-color: #10b981;">
+         <h3 class="text-3xl font-bold text-green-900 mb-6 flex items-center gap-3 relative z-10"><span class="animated-icon text-4xl">🌱</span> أهمية الحشرات</h3>
+         <div class="grid md:grid-cols-2 gap-6 relative z-10">
+          <div class="fancy-card p-6 border-r-4 border-green-500">
+           <h4 class="text-2xl font-bold text-green-800 mb-4 flex items-center gap-2"><span class="animated-icon text-3xl">👍</span> فوائد الحشرات</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="text-2xl">🌸</span> <span>تلقيح النباتات والأزهار</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">🍯</span> <span>إنتاج العسل والحرير</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">♻️</span> <span>تحليل المواد العضوية</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">🎯</span> <span>مكافحة الآفات الضارة</span></li>
+           </ul>
+          </div>
+          <div class="fancy-card p-6 border-r-4 border-red-500">
+           <h4 class="text-2xl font-bold text-red-800 mb-4 flex items-center gap-2"><span class="animated-icon text-3xl">⚠️</span> أضرار الحشرات</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="text-2xl">🦟</span> <span>نقل الأمراض للإنسان</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">🌾</span> <span>إتلاف المحاصيل الزراعية</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">🏠</span> <span>تدمير الأخشاب والأثاث</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">🍎</span> <span>إفساد الأطعمة المخزنة</span></li>
+           </ul>
+          </div>
+         </div>
+        </section>
+        <section class="ornate-border" style="border-image: linear-gradient(45deg, #fbbf24, #f59e0b, #fbbf24) 1;">
+         <h3 class="text-3xl font-bold text-yellow-900 mb-6 text-center flex items-center justify-center gap-3"><span class="animated-icon text-4xl">🦗</span> أمثلة على الحشرات</h3>
+         <div class="flex flex-wrap gap-4 justify-center mt-6"><span class="badge text-xl px-6 py-3" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">🦋 الفراشات</span> <span class="badge text-xl px-6 py-3" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">🐝 النحل</span> <span class="badge text-xl px-6 py-3" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">🐜 النمل</span> <span class="badge text-xl px-6 py-3" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">🦗 الجراد</span> <span class="badge text-xl px-6 py-3" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">🪲 الخنافس</span> <span class="badge text-xl px-6 py-3" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">🦟 البعوض</span>
+         </div>
+        </section>
+       </div>
+      </div>
+     </div>
+    </div><!-- Lesson 2 -->
+    <div id="lesson2-page" class="page-content hidden">
+     <div class="max-w-6xl mx-auto">
+      <div class="fancy-card p-12 fade-in stars">
+       <h2 class="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-green-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent"><span class="animated-icon">🦀</span> الدرس الثاني: القشريات</h2>
+       <div class="decorative-divider"></div>
+       <div class="space-y-8 mt-10">
+        <section class="info-box" style="border-right-color: #10b981;">
+         <h3 class="text-3xl font-bold text-green-900 mb-5 flex items-center gap-3"><span class="animated-icon text-4xl">🌊</span> مقدمة عن القشريات</h3>
+         <p class="text-xl text-gray-800 leading-relaxed relative z-10">القشريات هي مفصليات مائية في الغالب، تتميز بوجود <span class="badge">درع صلب</span> يغطي الرأس والصدر معاً. معظمها يعيش في البيئات المائية البحرية والعذبة، وقليل منها يعيش على اليابسة.</p>
+        </section>
+        <section class="ornate-border">
+         <h3 class="text-3xl font-bold text-blue-900 mb-6 text-center flex items-center justify-center gap-3"><span class="animated-icon text-4xl">🔍</span> خصائص القشريات</h3>
+         <div class="grid md:grid-cols-2 gap-8 mt-6">
+          <div class="fancy-card p-8">
+           <h4 class="text-2xl font-bold text-blue-800 mb-5 flex items-center gap-2"><span class="animated-icon text-3xl">🦐</span> التركيب الجسمي</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="badge text-sm">🔸</span> <span><strong>الرأسصدر:</strong> اندماج الرأس والصدر</span></li>
+            <li class="flex items-start gap-3"><span class="badge text-sm">🔸</span> <span><strong>البطن:</strong> مقسم لحلقات متعددة</span></li>
+            <li class="flex items-start gap-3"><span class="badge text-sm">🔸</span> <span>زوجان من قرون الاستشعار</span></li>
+            <li class="flex items-start gap-3"><span class="badge text-sm">🔸</span> <span>عدد متغير من الأرجل</span></li>
+           </ul>
+          </div>
+          <div class="fancy-card p-8">
+           <h4 class="text-2xl font-bold text-blue-800 mb-5 flex items-center gap-2"><span class="animated-icon text-3xl">⚙️</span> الأجهزة الحيوية</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="text-2xl">💨</span> <span><strong>التنفس:</strong> بالخياشيم</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">🩸</span> <span><strong>الدوران:</strong> جهاز دوري مفتوح</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">🧠</span> <span><strong>الجهاز العصبي:</strong> متطور</span></li>
+            <li class="flex items-start gap-3"><span class="text-2xl">👁️</span> <span><strong>العيون:</strong> مركبة ومعنقة</span></li>
+           </ul>
+          </div>
+         </div>
+        </section>
+        <section class="info-box" style="border-right-color: #8b5cf6;">
+         <h3 class="text-3xl font-bold text-purple-900 mb-6 flex items-center gap-3 relative z-10"><span class="animated-icon text-4xl">🦐</span> أمثلة على القشريات</h3>
+         <div class="grid md:grid-cols-3 gap-6 relative z-10">
+          <div class="fancy-card p-6 text-center">
+           <div class="animated-icon text-6xl mb-4">
+            🦐
+           </div>
+           <h4 class="text-2xl font-bold text-purple-800 mb-2">الجمبري</h4>
+           <p class="text-gray-600 text-lg">من أهم المأكولات البحرية</p>
+          </div>
+          <div class="fancy-card p-6 text-center">
+           <div class="animated-icon text-6xl mb-4" style="animation-delay: 0.3s;">
+            🦀
+           </div>
+           <h4 class="text-2xl font-bold text-purple-800 mb-2">السرطان</h4>
+           <p class="text-gray-600 text-lg">له مخالب قوية للدفاع</p>
+          </div>
+          <div class="fancy-card p-6 text-center">
+           <div class="animated-icon text-6xl mb-4" style="animation-delay: 0.6s;">
+            🦞
+           </div>
+           <h4 class="text-2xl font-bold text-purple-800 mb-2">الكركند</h4>
+           <p class="text-gray-600 text-lg">أكبر القشريات حجماً</p>
+          </div>
+         </div>
+        </section>
+        <section class="ornate-border" style="border-image: linear-gradient(45deg, #f97316, #ea580c, #f97316) 1;">
+         <h3 class="text-3xl font-bold text-orange-900 mb-6 text-center flex items-center justify-center gap-3"><span class="animated-icon text-4xl">⭐</span> الأهمية الاقتصادية</h3>
+         <div class="fancy-card p-8 mt-6">
+          <ul class="text-gray-800 space-y-4 text-xl">
+           <li class="flex items-start gap-4"><span class="text-3xl">🍽️</span> <span><strong class="text-orange-700">مصدر غذائي:</strong> الجمبري والسرطان والكركند من الأطعمة البحرية المهمة</span></li>
+           <li class="flex items-start gap-4"><span class="text-3xl">🌊</span> <span><strong class="text-orange-700">في السلسلة الغذائية:</strong> غذاء رئيسي للأسماك والطيور البحرية</span></li>
+           <li class="flex items-start gap-4"><span class="text-3xl">🔬</span> <span><strong class="text-orange-700">البحث العلمي:</strong> تستخدم في الدراسات البيولوجية</span></li>
+           <li class="flex items-start gap-4"><span class="text-3xl">♻️</span> <span><strong class="text-orange-700">تنظيف البيئة:</strong> تتغذى على الفضلات والكائنات الميتة</span></li>
+          </ul>
+         </div>
+        </section>
+       </div>
+      </div>
+     </div>
+    </div><!-- Lesson 3 -->
+    <div id="lesson3-page" class="page-content hidden">
+     <div class="max-w-6xl mx-auto">
+      <div class="fancy-card p-12 fade-in stars">
+       <h2 class="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent"><span class="animated-icon">🕷️</span> الدرس الثالث: العنكبيات وعديدات الأرجل</h2>
+       <div class="decorative-divider"></div>
+       <div class="space-y-8 mt-10">
+        <section class="info-box" style="border-right-color: #f97316;">
+         <h3 class="text-3xl font-bold text-orange-900 mb-5 flex items-center gap-3"><span class="animated-icon text-4xl">🕸️</span> أولاً: العنكبيات</h3>
+         <p class="text-xl text-gray-800 leading-relaxed mb-6 relative z-10">العنكبيات هي مفصليات برية تتميز بوجود <span class="badge">ثمانية أرجل</span> وجسم مقسم لجزأين: الرأسصدر والبطن.</p>
+         <div class="grid md:grid-cols-2 gap-6 relative z-10">
+          <div class="fancy-card p-8">
+           <h4 class="text-2xl font-bold text-orange-800 mb-5 flex items-center gap-2"><span class="animated-icon text-3xl">✨</span> الخصائص الرئيسية</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="badge text-sm">🦵</span> <span>ثمانية أرجل</span></li>
+            <li class="flex items-start gap-3"><span class="badge text-sm">👁️</span> <span>عيون بسيطة (2-12 عين)</span></li>
+            <li class="flex items-start gap-3"><span class="badge text-sm">🚫</span> <span>لا توجد قرون استشعار</span></li>
+            <li class="flex items-start gap-3"><span class="badge text-sm">💨</span> <span>التنفس بالرئات الكتابية</span></li>
+            <li class="flex items-start gap-3"><span class="badge text-sm">🕸️</span> <span>غدد حريرية لإنتاج الخيوط</span></li>
+           </ul>
+          </div>
+          <div class="fancy-card p-8">
+           <h4 class="text-2xl font-bold text-orange-800 mb-5 flex items-center gap-2"><span class="animated-icon text-3xl">🦂</span> أمثلة على العنكبيات</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="text-3xl">🕷️</span> <span class="pt-1">العناكب</span></li>
+            <li class="flex items-start gap-3"><span class="text-3xl">🦂</span> <span class="pt-1">العقارب</span></li>
+            <li class="flex items-start gap-3"><span class="text-3xl">🕸️</span> <span class="pt-1">الحَلَم والقُراد</span></li>
+            <li class="flex items-start gap-3"><span class="text-3xl">🦗</span> <span class="pt-1">العناكب الحاصدة</span></li>
+           </ul>
+          </div>
+         </div>
+        </section>
+        <section class="info-box" style="border-right-color: #ef4444;">
+         <h3 class="text-3xl font-bold text-red-900 mb-5 flex items-center gap-3"><span class="animated-icon text-4xl">🐛</span> ثانياً: عديدات الأرجل</h3>
+         <p class="text-xl text-gray-800 leading-relaxed mb-6 relative z-10">حيوانات برية ذات جسم طويل مقسم لحلقات متعددة، كل حلقة تحمل <span class="badge">زوج أو زوجين من الأرجل</span>.</p>
+         <div class="grid md:grid-cols-2 gap-8 relative z-10">
+          <div class="fancy-card p-8 border-r-4 border-red-500">
+           <h4 class="text-2xl font-bold text-red-800 mb-5 flex items-center gap-2"><span class="animated-icon text-4xl">🐛</span> ذوات الألف رجل</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="text-red-500 text-xl">◆</span> <span>كل حلقة تحمل زوجين من الأرجل</span></li>
+            <li class="flex items-start gap-3"><span class="text-red-500 text-xl">◆</span> <span>حركة بطيئة</span></li>
+            <li class="flex items-start gap-3"><span class="text-red-500 text-xl">◆</span> <span>تتغذى على المواد العضوية المتحللة</span></li>
+            <li class="flex items-start gap-3"><span class="text-red-500 text-xl">◆</span> <span>غير سامة</span></li>
+            <li class="flex items-start gap-3"><span class="text-red-500 text-xl">◆</span> <span>جسم أسطواني</span></li>
+           </ul>
+          </div>
+          <div class="fancy-card p-8 border-r-4 border-orange-500">
+           <h4 class="text-2xl font-bold text-orange-800 mb-5 flex items-center gap-2"><span class="animated-icon text-4xl">🐜</span> ذوات المائة رجل</h4>
+           <ul class="text-gray-700 space-y-3 text-lg">
+            <li class="flex items-start gap-3"><span class="text-orange-500 text-xl">◆</span> <span>كل حلقة تحمل زوج واحد من الأرجل</span></li>
+            <li class="flex items-start gap-3"><span class="text-orange-500 text-xl">◆</span> <span>حركة سريعة</span></li>
+            <li class="flex items-start gap-3"><span class="text-orange-500 text-xl">◆</span> <span>مفترسة (تصطاد الحشرات)</span></li>
+            <li class="flex items-start gap-3"><span class="text-orange-500 text-xl">◆</span> <span>لها مخالب سامة</span></li>
+            <li class="flex items-start gap-3"><span class="text-orange-500 text-xl">◆</span> <span>جسم مفلطح</span></li>
+           </ul>
+          </div>
+         </div>
+        </section>
+        <section class="ornate-border">
+         <h3 class="text-3xl font-bold text-indigo-900 mb-6 text-center flex items-center justify-center gap-3"><span class="animated-icon text-4xl">📊</span> جدول المقارنة</h3>
+         <div class="overflow-x-auto mt-6">
+          <table class="luxury-table w-full">
+           <thead>
+            <tr>
+             <th class="text-right">الصفة</th>
+             <th class="text-right">العنكبيات</th>
+             <th class="text-right">عديدات الأرجل</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+             <td class="font-bold">عدد الأرجل</td>
+             <td><span class="badge">8 أرجل</span></td>
+             <td><span class="badge">متعدد (30-750)</span></td>
+            </tr>
+            <tr>
+             <td class="font-bold">أجزاء الجسم</td>
+             <td>رأسصدر + بطن</td>
+             <td>رأس + جذع مقسم</td>
+            </tr>
+            <tr>
+             <td class="font-bold">قرون الاستشعار</td>
+             <td>لا توجد</td>
+             <td>زوج واحد</td>
+            </tr>
+            <tr>
+             <td class="font-bold">البيئة</td>
+             <td>برية بشكل رئيسي</td>
+             <td>برية رطبة</td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+        </section>
+       </div>
+      </div>
+     </div>
+    </div><!-- Quiz Page -->
+    <div id="quiz-page" class="page-content hidden">
+     <div class="max-w-5xl mx-auto">
+      <div class="fancy-card p-12 fade-in stars">
+       <h2 class="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-red-600 via-pink-600 to-purple-600 bg-clip-text text-transparent"><span class="animated-icon">❓</span> اختبار تنوع المفصليات</h2>
+       <div class="decorative-divider"></div>
+       <div id="quiz-container" class="space-y-8 mt-10"><!-- Questions will be generated by JavaScript -->
+       </div>
+       <div class="mt-12 text-center"><button onclick="checkAnswers()" class="luxury-button text-2xl px-16 py-5" style="background: linear-gradient(135deg, #ef4444 0%, #ec4899 100%); box-shadow: 0 15px 40px rgba(239, 68, 68, 0.4);"> ✓ تحقق من الإجابات </button>
+        <div id="quiz-result" class="mt-8 text-3xl font-bold"></div>
+       </div>
+      </div>
+     </div>
+    </div><!-- Team Page -->
+    <div id="team-page" class="page-content hidden">
+     <div class="max-w-6xl mx-auto">
+      <div class="fancy-card p-12 fade-in stars">
+       <h2 class="text-5xl font-bold text-center mb-10 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"><span class="animated-icon">👥</span> فريق العمل</h2>
+       <div class="decorative-divider"></div><!-- مصمم الموقع -->
+       <div class="mb-16 mt-10">
+        <div class="fancy-card p-12 text-center border-4 border-purple-400">
+         <div class="animated-icon text-8xl mb-6">
+          🌟
+         </div>
+         <h3 class="text-4xl font-bold text-purple-900 mb-4">هوزن هادي نزار شيخ الغنامة</h3>
+         <p class="text-2xl text-purple-700 font-bold mb-4">مصمم الموقع والشارح الرئيسي للدرس</p>
+         <div class="flex justify-center gap-3 flex-wrap"><span class="badge text-lg">💻 مصمم الموقع</span> <span class="badge text-lg">📚 شارح رئيسي</span> <span class="badge text-lg">🎨 مبدع</span>
+         </div>
+        </div>
+       </div>
+       <h3 class="text-3xl font-bold text-gray-700 mb-8 text-center"><span class="decorative-title">شارحو الدرس</span></h3>
+       <div class="grid md:grid-cols-3 gap-8">
+        <div class="fancy-card p-8 text-center">
+         <div class="animated-icon text-6xl mb-4">
+          👨‍🎓
+         </div>
+         <h4 class="text-2xl font-bold text-blue-900 mb-3">عمر كرم عبد الرزاق</h4>
+         <p class="text-blue-700 text-lg font-semibold mb-3">شارح الدرس</p><span class="badge">📖 شارح متميز</span>
+        </div>
+        <div class="fancy-card p-8 text-center">
+         <div class="animated-icon text-6xl mb-4" style="animation-delay: 0.3s;">
+          👨‍🎓
+         </div>
+         <h4 class="text-2xl font-bold text-green-900 mb-3">رياض إياد آغا</h4>
+         <p class="text-green-700 text-lg font-semibold mb-3">شارح الدرس</p><span class="badge" style="background: linear-gradient(135deg, #10b981, #059669);">📖 شارح متميز</span>
+        </div>
+        <div class="fancy-card p-8 text-center">
+         <div class="animated-icon text-6xl mb-4" style="animation-delay: 0.6s;">
+          👨‍🎓
+         </div>
+         <h4 class="text-2xl font-bold text-orange-900 mb-3">بدر محمد الفاعوري</h4>
+         <p class="text-orange-700 text-lg font-semibold mb-3">شارح الدرس</p><span class="badge" style="background: linear-gradient(135deg, #f97316, #ea580c);">📖 شارح متميز</span>
+        </div>
+       </div>
+       <div class="mt-12 fancy-card p-10 text-center">
+        <p class="text-3xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent"><span class="animated-icon text-4xl">🎉</span> شكراً لجهودكم المميزة! <span class="animated-icon text-4xl">🎉</span></p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main><!-- Footer -->
+   <footer class="gradient-bg islamic-pattern text-white py-12 mt-20 relative overflow-hidden">
+    <div class="sparkle" style="top: 25%; left: 15%; animation-delay: 0s;"></div>
+    <div class="sparkle" style="top: 45%; right: 20%; animation-delay: 1s;"></div>
+    <div class="sparkle" style="top: 65%; left: 25%; animation-delay: 2s;"></div>
+    <div class="container mx-auto px-6 text-center relative z-10">
+     <p id="footer-text" class="text-2xl mb-3 font-bold text-shadow-luxury">موقع تعليمي - أحياء أول ثانوي بنين</p>
+     <div class="decorative-divider"></div>
+     <p class="text-lg opacity-90">© 2025 - جميع الحقوق محفوظة</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+        // Configuration
+        const defaultConfig = {
+            main_title: "🦋 تنوع المفصليات 🦋",
+            subtitle: "أحياء - أول ثانوي بنين",
+            school_year: "العام الدراسي 2025",
+            intro_title: "📖 مقدمة عن الدرس",
+            intro_text: "في هذا الدرس سنتعرف على تنوع المفصليات، وهي أكبر وأنجح مجموعة من الحيوانات على وجه الأرض! سندرس الحشرات والقشريات والعنكبيات وعديدات الأرجل، ونتعرف على خصائصها الفريدة وأهميتها في حياتنا.",
+            footer_text: "موقع تعليمي - أحياء أول ثانوي بنين"
+        };
+
+        // Quiz questions
+        const quizQuestions = [
+            {
+                question: "ما هي أكبر مجموعة في المفصليات من حيث عدد الأنواع؟",
+                options: ["العنكبيات", "الحشرات", "القشريات", "عديدات الأرجل"],
+                correct: 1
+            },
+            {
+                question: "كم عدد أرجل الحشرات؟",
+                options: ["4 أرجل", "6 أرجل", "8 أرجل", "10 أرجل"],
+                correct: 1
+            },
+            {
+                question: "كم عدد أرجل العنكبيات؟",
+                options: ["6 أرجل", "8 أرجل", "10 أرجل", "12 رجل"],
+                correct: 1
+            },
+            {
+                question: "أين تعيش معظم القشريات؟",
+                options: ["في الصحاري", "في البيئات المائية", "على الأشجار", "تحت التربة"],
+                correct: 1
+            },
+            {
+                question: "ما هي أجزاء جسم الحشرة الثلاثة الرئيسية؟",
+                options: ["رأس وصدر وبطن", "رأس وجذع وذيل", "رأسصدر وبطن فقط", "صدر وبطن وذيل"],
+                correct: 0
+            },
+            {
+                question: "ماذا تستخدم الحشرات في التنفس؟",
+                options: ["الخياشيم", "الرئات", "الثغور التنفسية", "الجلد"],
+                correct: 2
+            },
+            {
+                question: "من الأمثلة على القشريات:",
+                options: ["النمل", "العنكبوت", "الجمبري", "العقرب"],
+                correct: 2
+            },
+            {
+                question: "ذوات المائة رجل هي:",
+                options: ["بطيئة الحركة وتتغذى على النباتات", "سريعة الحركة ومفترسة", "مائية", "لها 8 أرجل"],
+                correct: 1
+            },
+            {
+                question: "ما الذي يميز العنكبيات عن الحشرات؟",
+                options: ["لها أجنحة", "لها 8 أرجل", "لها 6 أرجل", "تعيش في الماء"],
+                correct: 1
+            },
+            {
+                question: "من فوائد الحشرات:",
+                options: ["تلقيح النباتات", "نقل الأمراض فقط", "إتلاف المحاصيل فقط", "لا فائدة منها"],
+                correct: 0
+            }
+        ];
+
+        // Page navigation
+        function showPage(pageName) {
+            const pages = document.querySelectorAll('.page-content');
+            pages.forEach(page => page.classList.add('hidden'));
+            
+            const targetPage = document.getElementById(pageName + '-page');
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+                targetPage.classList.add('fade-in');
+            }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Generate quiz
+        function generateQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+            
+            quizQuestions.forEach((q, index) => {
+                const questionDiv = document.createElement('div');
+                questionDiv.className = 'info-box relative z-10';
+                questionDiv.style.borderRightColor = '#ef4444';
+                questionDiv.innerHTML = `
+                    <h3 class="text-2xl font-bold text-gray-800 mb-5">${index + 1}. ${q.question}</h3>
+                    <div class="space-y-4">
+                        ${q.options.map((option, optIndex) => `
+                            <label class="fancy-card p-5 cursor-pointer flex items-center gap-4 transition-all hover:transform hover:scale-102" data-question="${index}" data-option="${optIndex}">
+                                <input type="radio" name="question${index}" value="${optIndex}" class="w-6 h-6">
+                                <span class="text-xl">${option}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(questionDiv);
+            });
+        }
+
+        // Check answers
+        function checkAnswers() {
+            let correctCount = 0;
+            
+            quizQuestions.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+                const options = document.querySelectorAll(`label[data-question="${index}"]`);
+                
+                options.forEach(option => {
+                    option.style.borderColor = 'transparent';
+                    const optionIndex = parseInt(option.dataset.option);
+                    
+                    if (optionIndex === q.correct) {
+                        option.style.background = 'linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%)';
+                        option.style.borderColor = '#10b981';
+                        option.style.borderWidth = '3px';
+                        option.style.borderStyle = 'solid';
+                    }
+                    
+                    if (selectedOption && parseInt(selectedOption.value) === optionIndex && optionIndex !== q.correct) {
+                        option.style.background = 'linear-gradient(135deg, #fee2e2 0%, #fecaca 100%)';
+                        option.style.borderColor = '#ef4444';
+                        option.style.borderWidth = '3px';
+                        option.style.borderStyle = 'solid';
+                    }
+                });
+                
+                if (selectedOption && parseInt(selectedOption.value) === q.correct) {
+                    correctCount++;
+                }
+            });
+            
+            const resultDiv = document.getElementById('quiz-result');
+            const percentage = (correctCount / quizQuestions.length * 100).toFixed(0);
+            
+            let message = '';
+            let gradient = '';
+            
+            if (percentage >= 90) {
+                message = 'ممتاز! 🌟';
+                gradient = 'from-green-600 via-emerald-600 to-teal-600';
+            } else if (percentage >= 70) {
+                message = 'جيد جداً! 👍';
+                gradient = 'from-blue-600 via-indigo-600 to-purple-600';
+            } else if (percentage >= 50) {
+                message = 'جيد! 📚';
+                gradient = 'from-orange-600 via-amber-600 to-yellow-600';
+            } else {
+                message = 'يحتاج مراجعة 📖';
+                gradient = 'from-red-600 via-pink-600 to-rose-600';
+            }
+            
+            resultDiv.innerHTML = `
+                <div class="fancy-card p-8 inline-block">
+                    <div class="bg-gradient-to-r ${gradient} bg-clip-text text-transparent">
+                        ${message}<br>
+                        <span class="text-4xl">درجتك: ${correctCount} من ${quizQuestions.length}</span><br>
+                        <span class="text-3xl">(${percentage}%)</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Update configuration
+        async function onConfigChange(config) {
+            document.getElementById('main-title').textContent = config.main_title || defaultConfig.main_title;
+            document.getElementById('subtitle').textContent = config.subtitle || defaultConfig.subtitle;
+            document.getElementById('school-year').textContent = config.school_year || defaultConfig.school_year;
+            document.getElementById('intro-title').textContent = config.intro_title || defaultConfig.intro_title;
+            document.getElementById('intro-text').textContent = config.intro_text || defaultConfig.intro_text;
+            document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+        }
+
+        // Initialize Element SDK
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig: defaultConfig,
+                onConfigChange: onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [],
+                    borderables: [],
+                    fontEditable: undefined,
+                    fontSizeable: undefined
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["main_title", config.main_title || defaultConfig.main_title],
+                    ["subtitle", config.subtitle || defaultConfig.subtitle],
+                    ["school_year", config.school_year || defaultConfig.school_year],
+                    ["intro_title", config.intro_title || defaultConfig.intro_title],
+                    ["intro_text", config.intro_text || defaultConfig.intro_text],
+                    ["footer_text", config.footer_text || defaultConfig.footer_text]
+                ])
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            generateQuiz();
+            showPage('home');
+            
+            if (window.elementSdk && window.elementSdk.config) {
+                onConfigChange(window.elementSdk.config);
+            } else {
+                onConfigChange(defaultConfig);
+            }
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b19284e21d82cfa',t:'MTc2NjMzODc1Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
